@@ -5,7 +5,9 @@ import Button from 'react-bootstrap/Button';
 const NavigationItem = (props) => {
   return (
     <li className={styles.navigationItem}>
-      <Button variant='primary'>{props.children}</Button>
+      <Button variant='light' size='lg'>
+        {props.children}
+      </Button>
     </li>
   );
 };

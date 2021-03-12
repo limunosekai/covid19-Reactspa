@@ -1,5 +1,57 @@
 .Statistics {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.Bar {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.Line {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.Doughnut {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.head {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: mediumblue;
+}
+
+@media screen and (max-width: 500px) {
+  .Bar {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .Line {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .Doughnut {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .head {
+    font-size: 1.4rem;
+  }
 }
