@@ -1,23 +1,50 @@
 import React, { Component } from 'react';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import axios from 'axios';
+import styles from './Statistic.module.css';
 
 class Statistic extends Component {
-  state = {
-    monthlyData: {
-      labels: ['1월', '2월', '3월'],
-      datasets: [
-        {
-          label: '국내 누적 확진자',
-          backgroundColor: 'salmon',
-          fill: true,
-          data: [22315, 44442, 55523],
-        },
-      ],
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      confirmedData: {
+        labels: ['1월', '2월', '3월'],
+        datasets: [
+          {
+            label: '국내 누적 확진자',
+            backgroundColor: 'salmon',
+            fill: true,
+            data: [0, 0, 0],
+          },
+        ],
+      },
+      quarantinedData: {
+        labels: ['1월', '2월', '3월'],
+        datasets: [
+          {
+            label: '월별 격리자 현황',
+            backgroundColor: 'salmon',
+            fill: true,
+            data: [0, 0, 0],
+          },
+        ],
+      },
+      comparedData: {
+        labels: ['확진자', '격리해제', '사망자'],
+        datasets: [
+          {
+            label: '확진,해제,사망 비율',
+            backgroundColor: ['#f9de59', '#e8a628', '#719a0a'],
+            boarderColor: ['#f9de59', '#e8a628', '#719a0a'],
+            fill: false,
+            data: [0, 0, 0],
+          },
+        ],
+      },
+    };
+  }
 
-  componentDidUpdate() {
+  componentDidMount() {
     // API 요청
     const getData = async () => {
       try {
@@ -44,7 +71,7 @@ class Statistic extends Component {
         const death = cur.Deaths;
         const recovered = cur.Recovered;
 
-        //
+        // 각 월별 마지막날 데이터 수집
         const findItem = acc.find(
           (temp) => temp.year === year && temp.month === month
         );
@@ -68,7 +95,6 @@ class Statistic extends Component {
           findItem.month = month;
           findItem.day = date;
         }
-        // console.log(acc);
         return acc;
       }, []);
 
@@ -77,8 +103,41 @@ class Statistic extends Component {
         return a.year === 2021;
       });
 
+      // 마지막달 데이터 추출
+      const last = newArr[newArr.length - 1];
+
       this.setState({
-        datasets: [{ data: newArr.map((a) => a.confirmed) }],
+        confirmedData: {
+          datasets: [
+            {
+              label: '국내 누적 확진자',
+              backgroundColor: 'salmon',
+              fill: true,
+              data: newArr.map((a) => a.confirmed),
+            },
+          ],
+        },
+        quarantinedData: {
+          datasets: [
+            {
+              label: '월별 격리자 현황',
+              borderColor: 'salmon',
+              fill: false,
+              data: newArr.map((a) => a.active),
+            },
+          ],
+        },
+        comparedData: {
+          datasets: [
+            {
+              label: '확진,해제,사망 비율',
+              backgroundColor: ['#f9de59', '#e8a628', '#719a0a'],
+              boarderColor: ['#f9de59', '#e8a628', '#719a0a'],
+              fill: false,
+              data: [last.confirmed, last.recovered, last.death],
+            },
+          ],
+        },
       });
     };
 
@@ -87,20 +146,64 @@ class Statistic extends Component {
 
   render() {
     return (
-      <div>
+      <section>
         <h2>국내 코로나 현황</h2>
-        <Bar
-          data={this.state.monthlyData}
-          options={
-            ({
-              title: { display: true, text: '국내 확진자 추이', fontSize: 16 },
-            },
-            {
-              legend: { display: true, position: 'bottom' },
-            })
-          }
-        ></Bar>
-      </div>
+        <div className={styles.Statistics}>
+          <div>
+            <Bar
+              data={this.state.confirmedData}
+              options={
+                ({
+                  title: {
+                    display: true,
+                    text: '국내 확진자 추이',
+                    fontSize: 16,
+                  },
+                },
+                {
+                  legend: { display: true, position: 'bottom' },
+                })
+              }
+            ></Bar>
+          </div>
+          <div>
+            <Line
+              data={this.state.quarantinedData}
+              options={
+                ({
+                  title: {
+                    display: true,
+                    text: '월별 격리자 현황',
+                    fontSize: 16,
+                  },
+                },
+                {
+                  legend: { display: true, position: 'bottom' },
+                })
+              }
+            ></Line>
+          </div>
+          <div>
+            <Doughnut
+              data={this.state.comparedData}
+              options={
+                ({
+                  title: {
+                    display: true,
+                    text: `확진자, 격리해제, 사망자 비율 (${
+                      new Date().getMonth() + 1
+                    }월)`,
+                    fontSize: 16,
+                  },
+                },
+                {
+                  legend: { display: true, position: 'bottom' },
+                })
+              }
+            ></Doughnut>
+          </div>
+        </div>
+      </section>
     );
   }
 }
