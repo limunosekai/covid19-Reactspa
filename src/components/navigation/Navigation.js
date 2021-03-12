@@ -6,8 +6,8 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={styles.navigation}>
-        <NavigationItem>통계</NavigationItem>
-        <NavigationItem>지도</NavigationItem>
+        <NavigationItem>STATISTICS</NavigationItem>
+        <NavigationItem>MAP</NavigationItem>
       </ul>
     );
   }

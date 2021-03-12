@@ -225,7 +225,6 @@ class Statistic extends Component {
   render() {
     return (
       <section>
-        <h2 className={styles.head}>국내 코로나 현황</h2>
         <div className={styles.Statistics}>
           <div className={styles.Bar}>
             <Bar

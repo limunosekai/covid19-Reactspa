@@ -10,26 +10,27 @@
   margin-top: 2rem;
   width: 100%;
   max-width: 600px;
+  padding: 2rem;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
 }
 
 .Line {
   margin-top: 2rem;
   width: 100%;
   max-width: 600px;
+  padding: 2rem;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
 }
 
 .Doughnut {
   margin-top: 2rem;
   width: 100%;
   max-width: 600px;
-}
-
-.head {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 2rem;
-  font-weight: bold;
-  color: mediumblue;
+  padding: 2rem;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
 }
 
 @media screen and (max-width: 500px) {
