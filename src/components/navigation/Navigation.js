@@ -6,8 +6,8 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={styles.navigation}>
-        <NavigationItem>STATISTICS</NavigationItem>
-        <NavigationItem>MAP</NavigationItem>
+        <NavigationItem link='/'>STATISTICS</NavigationItem>
+        <NavigationItem link='/map'>MAP</NavigationItem>
       </ul>
     );
   }
