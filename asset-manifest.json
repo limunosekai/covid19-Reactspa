@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/COVID19-ReactSPA/static/css/main.eefdaa6a.chunk.css",
+    "main.js": "/COVID19-ReactSPA/static/js/main.37812cc2.chunk.js",
+    "main.js.map": "/COVID19-ReactSPA/static/js/main.37812cc2.chunk.js.map",
+    "runtime-main.js": "/COVID19-ReactSPA/static/js/runtime-main.a2ce812f.js",
+    "runtime-main.js.map": "/COVID19-ReactSPA/static/js/runtime-main.a2ce812f.js.map",
+    "static/js/2.a7908e59.chunk.js": "/COVID19-ReactSPA/static/js/2.a7908e59.chunk.js",
+    "static/js/2.a7908e59.chunk.js.map": "/COVID19-ReactSPA/static/js/2.a7908e59.chunk.js.map",
+    "static/js/3.f3efa72e.chunk.js": "/COVID19-ReactSPA/static/js/3.f3efa72e.chunk.js",
+    "static/js/3.f3efa72e.chunk.js.map": "/COVID19-ReactSPA/static/js/3.f3efa72e.chunk.js.map",
+    "index.html": "/COVID19-ReactSPA/index.html",
+    "static/css/main.eefdaa6a.chunk.css.map": "/COVID19-ReactSPA/static/css/main.eefdaa6a.chunk.css.map",
+    "static/js/2.a7908e59.chunk.js.LICENSE.txt": "/COVID19-ReactSPA/static/js/2.a7908e59.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a2ce812f.js",
+    "static/js/2.a7908e59.chunk.js",
+    "static/css/main.eefdaa6a.chunk.css",
+    "static/js/main.37812cc2.chunk.js"
+  ]
+}
