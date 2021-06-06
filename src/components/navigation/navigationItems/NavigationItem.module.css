@@ -2,3 +2,19 @@
   margin-top: 1rem;
   margin-right: 1.5rem;
 }
+
+.navigationItem button {
+  outline: none;
+  border: none;
+  padding: 16px;
+  color: white;
+  background-color: crimson;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navigationItem button:hover {
+  text-decoration: underline;
+}
