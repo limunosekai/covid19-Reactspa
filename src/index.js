@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename='/covid19-Reactspa'>
+    <BrowserRouter basename='/covid19-Reactspa/'>
       <App />
     </BrowserRouter>
   </React.StrictMode>,

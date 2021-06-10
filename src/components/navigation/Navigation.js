@@ -6,7 +6,8 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={styles.navigation}>
-        <NavigationItem link='/'>STATISTICS</NavigationItem>
+        <NavigationItem link='/'>통계</NavigationItem>
+        <NavigationItem link='/floating-list'>유동인구</NavigationItem>
       </ul>
     );
   }

@@ -8,7 +8,7 @@ class Statistic extends Component {
     super(props);
     this.state = {
       confirmedData: {
-        labels: ['1월', '2월', '3월'],
+        labels: ['4월', '5월', '6월'],
         datasets: [
           {
             label: '국내 누적 확진자',
@@ -19,7 +19,7 @@ class Statistic extends Component {
         ],
       },
       quarantinedData: {
-        labels: ['1월', '2월', '3월'],
+        labels: ['4월', '5월', '6월'],
         datasets: [
           {
             label: '월별 격리자 현황',
