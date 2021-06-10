@@ -13,7 +13,7 @@ function FloatingList() {
     setLoading(true);
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/http://openapi.seoul.go.kr:8088/${API_KEY}/json/Corona19Status/${start}/${
+        `https://cors.bridged.cc/http://openapi.seoul.go.kr:8088/${API_KEY}/json/Corona19Status/${start}/${
           start + 30
         }/`
       )
