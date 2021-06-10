@@ -19,18 +19,18 @@
   position: relative;
 }
 
-.table_ty1 tr th {
+.table_ty1 thead tr th {
   border: 1px solid #ddd;
   background: #fff;
   font-size: 17px;
+  font-weight: bold;
   color: #303030;
-  font-weight: 500;
   height: 59px;
   line-height: 59px;
   box-sizing: border-box;
 }
 
-.table_ty1 tr td {
+.table_ty1 tbody tr td {
   border: 1px solid #ddd;
   background: #fff;
   font-size: 17px;
@@ -40,31 +40,6 @@
   line-height: 59px;
   box-sizing: border-box;
   text-align: center;
-}
-.table_ty1 tr th a {
-  font-size: 17px;
-  color: #303030;
-  font-weight: 500;
-}
-.table_ty1 tr th a:after {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 6px;
-  background: url(../../assets/img/sub/ta_b.png) center no-repeat;
-  vertical-align: top;
-  margin-top: 27px;
-  margin-left: 8px;
-}
-.table_ty1 tr th.on a:after {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 6px;
-  background: url(../../assets/img/sub/ta_t.png) center no-repeat;
-  vertical-align: top;
-  margin-top: 27px;
-  margin-left: 8px;
 }
 
 .table_ty1 tr th:after {
