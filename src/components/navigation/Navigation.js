@@ -6,8 +6,8 @@ class Navigation extends Component {
   render() {
     return (
       <ul className={styles.navigation}>
-        <NavigationItem link='/'>통계</NavigationItem>
-        <NavigationItem link='/floating-list'>유동인구</NavigationItem>
+        <NavigationItem link='/'>그래프</NavigationItem>
+        <NavigationItem link='/floating-list'>서울시확진자</NavigationItem>
       </ul>
     );
   }

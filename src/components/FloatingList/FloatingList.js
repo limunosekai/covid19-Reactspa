@@ -6,15 +6,23 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 function FloatingList() {
   const [result, setResult] = useState([]);
+  const [start, setStart] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const fetchLists = () => {
+    setLoading(true);
     axios
       .get(
-        `http://openapi.seoul.go.kr:8088/${API_KEY}/json/Corona19Status/1/30/`
+        `http://openapi.seoul.go.kr:8088/${API_KEY}/json/Corona19Status/${start}/${
+          start + 30
+        }/`
       )
       .then((response) => {
         const data = response.data.Corona19Status.row;
-        setResult(data);
+        setResult((oldData) => {
+          return [...oldData, ...data];
+        });
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -23,6 +31,20 @@ function FloatingList() {
 
   useEffect(() => {
     fetchLists();
+  }, [start]);
+
+  useEffect(() => {
+    const event = window.addEventListener('scroll', () => {
+      if (
+        !loading &&
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 2
+      ) {
+        setStart((oldCount) => {
+          return oldCount + 30;
+        });
+      }
+    });
+    return () => window.removeEventListener('scroll', event);
     // eslint-disable-next-line
   }, []);
 
@@ -60,6 +82,7 @@ function FloatingList() {
           })}
         </tbody>
       </table>
+      {loading && <h2>Loading...</h2>}
     </section>
   );
 }
