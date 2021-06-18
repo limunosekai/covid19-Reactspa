@@ -1,4 +1,4 @@
-## Movie-Finder
+## COVID19-SPA
 
 [Go to WEB](https://limunosekai.github.io/covid19-Reactspa/)
 
